@@ -1,31 +1,30 @@
 'use strict'
 
-function f1(target) {
+function start(target) {
     target = Math.floor(Math.random() * 100);
     console.log(target);
 
-    function f2() {
+    function repiat() {
         let question = prompt('Введите число');
 
         if (question === null) {
         return false;
         } else if (isNaN(question)) {
-        f2();
+            repiat();
         } else {
             question = Number(question);
             console.log(question);
             if (target > question) {
                 console.log('Ваше число меньше');
-                f2();
+                repiat();
             } else if (target < question) {
                 console.log('Ваше число больше');
-                f2();
+                repiat();
             } else {
                 console.log('Ты угадал');
             }
         }
     }    
-    f2(target);
+    repiat(target);
 }
-
-f1();
+let target = start();
